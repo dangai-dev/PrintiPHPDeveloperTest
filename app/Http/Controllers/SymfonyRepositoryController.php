@@ -23,7 +23,7 @@ class SymfonyRepositoryController extends Controller
 	*@return array
 	*/
     public function index(){
-    	$client = new GitHubClient();
+    	$client = new GitHubClient(); 
 		$repositories = $client->api('user')->repositories('symfony'); 
     	
     	return view('index', compact('repositories')); 
