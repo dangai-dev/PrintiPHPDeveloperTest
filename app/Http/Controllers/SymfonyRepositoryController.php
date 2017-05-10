@@ -8,6 +8,7 @@
 */
 
 namespace App\Http\Controllers;
+use \Github\Client as GithubClient;
 
 use Illuminate\Http\Request;
 
@@ -22,7 +23,7 @@ class SymfonyRepositoryController extends Controller
 	*@return array
 	*/
     public function index(){
-    	$client = new \Github\Client(); 
+    	$client = new GitHubClient();
 		$repositories = $client->api('user')->repositories('symfony'); 
     	
     	return view('index', compact('repositories')); 
